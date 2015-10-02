@@ -2,7 +2,7 @@ package entites;
 
 import java.util.Date;
 
-public class Slide {
+public class Evenement {
 
 	private Long id;
 	
@@ -14,7 +14,7 @@ public class Slide {
 	
 	private Date date;
 
-	public Slide(Long id, String infos, String infosCachees, String type, Date date) {
+	public Evenement(Long id, String infos, String infosCachees, String type, Date date) {
 		super();
 		this.id = id;
 		this.infos = infos;

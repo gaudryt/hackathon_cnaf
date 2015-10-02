@@ -1,15 +1,12 @@
 package service;
 
-import org.json.JSONObject;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
-import entites.Slide;
+import entites.Evenement;
 
 import org.alexd.jsonrpc.*;
 
@@ -19,8 +16,8 @@ import org.alexd.jsonrpc.*;
  */
 public class ServiceJSON {
 
-    public List<Slide> getListeEntite(String num) throws Exception {
-        ArrayList<Slide> liste = new ArrayList<Slide>(10);
+    public List<Evenement> getListeEntite(String num) throws Exception {
+        ArrayList<Evenement> liste = new ArrayList<Evenement>(10);
         try {
             JSONRPCClient client = JSONRPCClient.create("http://service/uri");
             client.setConnectionTimeout(2000);
@@ -47,7 +44,7 @@ public class ServiceJSON {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-                    liste.add(new Slide(Long.parseLong(ligne[0]), ligne[1], ligne[2], ligne[3], date));
+                    liste.add(new Evenement(Long.parseLong(ligne[0]), ligne[1], ligne[2], ligne[3], date));
                 }
             }
         } catch (Exception e) {

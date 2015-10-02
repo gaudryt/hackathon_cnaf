@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 /**
  * Created by tgaudry on 02/10/2015.
@@ -14,7 +15,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
-    private static final int NUM_PAGES = 5;
+    private static final int NB_YEARS = 7;
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
@@ -39,6 +40,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         mPager.setPageTransformer(true, new DepthPageTransformer());
     }
 
+
     @Override
     public void onBackPressed() {
         if (mPager.getCurrentItem() == 0) {
@@ -62,12 +64,16 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ScreenSlidePageFragment();
+            Fragment fragment = ScreenSlidePageFragment.newInstance(position);
+            View view = fragment.getView();
+            findViewById(R.id.slideContent);
+            return fragment;
         }
+
 
         @Override
         public int getCount() {
-            return NUM_PAGES;
+            return NB_YEARS;
         }
     }
 
