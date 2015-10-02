@@ -48,6 +48,16 @@ public class ListObjetsHandler implements RequestHandler{
 		rep = rep + "7;MES;Le saviez vous ? 1/2 des français ont droit à la CAF;Ca fait beaucoup;01/08/2010\n";
 		rep = rep + "8;INF;Votre fiston fête ses 3 ans;Kado;01/09/2010\n";
 		rep = rep + "9;QUE;Quel est l'age de la branche famille des allocations ?;60;01/10/2010\n";
+		rep = rep + "10;QUE;Quelle est la couleur du cheval blanc d'Henry 4 ?;Blanc;01/02/2010\n";
+		rep = rep + "11;QUE;Quelle est la couleur du cheval blanc d'Henry 4 ?;Blanc;01/02/2010\n";
+		rep = rep + "12;DEM;Rouen;Paris;01/03/2010\n";
+		rep = rep + "13;MES;Le saviez-vous ? Aujourd'hui a lieu le hackathon de la cnaf !;nill;01/04/2010\n";
+		rep = rep + "14;INF;Vous pouvez recevoir 1000 euros pour cette année;nill;01/05/2010\n";
+		rep = rep + "15;QUE;Qu'est ce qui est petit, jaune et qui fait peur ?;Un poussin avec une mitraillette;01/06/2010\n";
+		rep = rep + "16;DEM;Terre;Mars;01/07/2010\n";
+		rep = rep + "17;MES;Le saviez vous ? 1/2 des français ont droit à la CAF;Ca fait beaucoup;01/08/2010\n";
+		rep = rep + "18;INF;Votre fiston fête ses 3 ans;Kado;01/09/2010\n";
+		rep = rep + "19;QUE;Quel est l'age de la branche famille des allocations ?;60;01/10/2010\n";
 		return rep;
 	}
 }
