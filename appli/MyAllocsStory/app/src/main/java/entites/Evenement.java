@@ -2,7 +2,7 @@ package entites;
 
 import java.util.Date;
 
-public class Evenement {
+public class Evenement implements Comparable<Evenement> {
 
 	private Long id;
 	
@@ -65,5 +65,14 @@ public class Evenement {
 	
 	public String toString(){
 		return this.getId()+";"+this.getType()+";"+this.getInfos()+";"+this.getInfosCachees()+";"+this.getDate().getDay()+"/"+this.getDate().getMonth()+"/"+this.getDate().getYear();
+	}
+
+	@Override
+	public int compareTo(Evenement evenement) {
+		int ret = 0;
+		if(this.getDate() != null && evenement.getDate() != null){
+			this.getDate().compareTo(evenement.getDate());
+		}
+		return ret;
 	}
 }
