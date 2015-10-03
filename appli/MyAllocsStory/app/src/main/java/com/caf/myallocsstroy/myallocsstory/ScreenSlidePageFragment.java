@@ -34,13 +34,31 @@ public class ScreenSlidePageFragment extends Fragment {
             v = inflater.inflate(R.layout.fragment_screen_slide_year_page, container, false);
             TextView textView = (TextView) v.findViewById(R.id.yearLabel);
             textView.setText(""+getYear(slideNum/2));
-            v.setBackgroundColor(Color.LTGRAY);
+            v.setBackgroundColor(Color.rgb(23, 144, 135));
 
             //animation de l'année
             Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.animate_year);
             a.reset();
             textView.clearAnimation();
             textView.startAnimation(a);
+
+            String yearMessage = "";
+            if (slideNum == 0){
+                //slide number one
+                yearMessage = "Tout commence !";
+            } else if(slideNum == evenementList.size()*2){
+                //slide final
+                yearMessage = "Ajourd'hui";
+            } else{
+                //slide intérmidiaire
+                yearMessage = "L'hsitoire continue ...";
+            }
+            TextView textView2 = (TextView) v.findViewById(R.id.yearMessage);
+            textView2.setText(yearMessage);
+            Animation b = AnimationUtils.loadAnimation(getContext(), R.anim.animate_year_message);
+            b.reset();
+            textView2.clearAnimation();
+            textView2.startAnimation(b);
         }else{
             //slide data
             v = inflater.inflate(R.layout.fragment_screen_slide_data_page, container, false);
@@ -48,7 +66,7 @@ public class ScreenSlidePageFragment extends Fragment {
 
             Evenement evenementMajeur = getSlideData(slideNum / 2);
             textView.setText("En "+getYear(slideNum/2)+", "+ evenementMajeur.getInfos());
-            v.setBackgroundColor(getColor(evenementMajeur.getType()));
+            v.setBackgroundColor(Color.rgb(208, 38, 97));
 
             //animation du slide des données
             Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.scale_event);
@@ -81,7 +99,7 @@ public class ScreenSlidePageFragment extends Fragment {
     }
 
     //renvoit la couleur du layout correspondante à l'évènement
-    private int getColor(String eventType){
+    /*private int getColor(String eventType){
         int color;
         switch (eventType) {
             case "mar":
@@ -98,7 +116,7 @@ public class ScreenSlidePageFragment extends Fragment {
                 break;
         }
         return color;
-    }
+    }*/
     private List<Evenement> getDataTemp(){
         List<Evenement> result = new ArrayList<Evenement>();
         /*SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
