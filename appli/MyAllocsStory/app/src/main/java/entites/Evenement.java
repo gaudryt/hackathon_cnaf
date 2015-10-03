@@ -14,7 +14,7 @@ public class Evenement implements Comparable<Evenement> {
 	
 	private Date date;
 
-	public Evenement(Long id, String infos, String infosCachees, String type, Date date) {
+	public Evenement(Long id, String infos, String type, String infosCachees, Date date) {
 		super();
 		this.id = id;
 		this.infos = infos;

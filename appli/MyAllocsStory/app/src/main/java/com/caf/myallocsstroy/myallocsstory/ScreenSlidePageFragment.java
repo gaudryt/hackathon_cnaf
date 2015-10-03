@@ -46,7 +46,7 @@ public class ScreenSlidePageFragment extends Fragment {
             if (slideNum == 0){
                 //slide number one
                 yearMessage = "Tout commence !";
-            } else if(slideNum == evenementList.size()*2){
+            } else if(getYear(slideNum/2) == 2015){
                 //slide final
                 yearMessage = "Ajourd'hui";
             } else{
@@ -65,6 +65,7 @@ public class ScreenSlidePageFragment extends Fragment {
             TextView textView = (TextView) v.findViewById(R.id.evenementMajeurLabel);
 
             Evenement evenementMajeur = getSlideData(slideNum / 2);
+
             textView.setText("En "+getYear(slideNum/2)+", "+ evenementMajeur.getInfos());
             v.setBackgroundColor(Color.rgb(208, 38, 97));
 
@@ -73,6 +74,16 @@ public class ScreenSlidePageFragment extends Fragment {
             a.reset();
             textView.clearAnimation();
             textView.startAnimation(a);
+            TextView textViewDetails = (TextView) v.findViewById(R.id.autresEvenementLabel);
+            if (getYear(slideNum/2) == 2008) {
+                textViewDetails.setText("Mon premier versement des APL\n\nMon premier versement du RMI\n\nMa CAF de Rattachement : CAF de Paris\n\nLe saviez-vous ? En 2008 il y avait 1.13 millions de bénéficiaires du RMI\n\nLe saviez-vous ? EN 2008, il y avait 395 172 foyers allocataires rattachés à la CAF de Paris");
+            } else if (getYear(slideNum/2) == 2009){
+                textViewDetails.setText("Mon premier versement des APL\n\nMon premier versement du RMI\n\nMa CAF de Rattachement : CAF de Paris\n\nLe saviez-vous ? En 2008 il y avait 1.13 millions de bénéficiaires du RMI\n\nLe saviez-vous ? EN 2008, il y avait 395 172 foyers allocataires rattachés à la CAF de Paris");
+            }else if (getYear(slideNum/2) == 2012){
+                textViewDetails.setText("Mon premier versement des APL\n\nMon premier versement du RMI\n\nMa CAF de Rattachement : CAF de Paris\n\nLe saviez-vous ? En 2008 il y avait 1.13 millions de bénéficiaires du RMI\n\nLe saviez-vous ? EN 2008, il y avait 395 172 foyers allocataires rattachés à la CAF de Paris");
+            }else if (getYear(slideNum/2) == 2015){
+                textViewDetails.setText("Mon premier versement des APL\n\nMon premier versement du RMI\n\nMa CAF de Rattachement : CAF de Paris\n\nLe saviez-vous ? En 2008 il y avait 1.13 millions de bénéficiaires du RMI\n\nLe saviez-vous ? EN 2008, il y avait 395 172 foyers allocataires rattachés à la CAF de Paris");
+            }
         }
         return v;
     }
@@ -119,22 +130,29 @@ public class ScreenSlidePageFragment extends Fragment {
     }*/
     private List<Evenement> getDataTemp(){
         List<Evenement> result = new ArrayList<Evenement>();
-        /*SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         try {
+            Date date2008 = formatter.parse("12/02/2008");
+            result.add(new Evenement((long) 0, "Votre naissance allocataire", "infosCachees", "mar", date2008));
+
             Date date2009 = formatter.parse("12/02/2009");
-            result.add(new Evenement((long) 0, "vous vous êtes marié", "infosCachees", "mar", date2009));
+            result.add(new Evenement((long) 1, "Pas de changement majeur", "infosCachees1", "nai", date2009));
 
-            Date date2011 = formatter.parse("12/02/2011");
-            result.add(new Evenement((long) 1, "vous avez eu un enfant ", "infosCachees1", "nai", date2011));
+            Date date2012 = formatter.parse("12/02/2012");
+            result.add(new Evenement((long) 2, "Naissance de votre premier enfant et votre arrivée dans la ville de : Lille", "infosCachees2", "dem", date2012));
 
-            Date date2013 = formatter.parse("12/02/2013");
-            result.add(new Evenement((long) 2, "vous avez déménagé", "infosCachees2", "dem", date2013));
+            Date date2015 = formatter.parse("12/02/2015");
+            result.add(new Evenement((long) 2, "Naissance de votre deuxième enfant", "infosCachees2", "dem", date2015));
         }catch (ParseException e)
             {
                 e.printStackTrace();
             }
-        return result;*/
-        ServiceJSON serviceJSON = new ServiceJSON();
+        return result;
+        /*
+        rep = "0;Votre naissance allocataire;Ceci est un test visible.;Ceci est un test caché;01/01/2008\n";
+                rep = rep + "1;Sans changement majeur;Ceci est un test visible.;Ceci est un test caché;01/01/2009\n";
+                rep = rep + "2;Naissance de votre premier enfant et votre arrivée dans la ville de : Lille;Ceci est un test visible.;Ceci est un test caché;01/01/2012\n";
+                rep = rep + "3;Naissance de votre deuxième enfant;Ceci est un test caché;01/01/2015\n";ServiceJSON serviceJSON = new ServiceJSON();
 
         try {
             result = serviceJSON.getListeEntite("02030201023");
@@ -142,7 +160,7 @@ public class ScreenSlidePageFragment extends Fragment {
             e.printStackTrace();
         }
 
-        return result;
+        return result;*/
     }
 
 }

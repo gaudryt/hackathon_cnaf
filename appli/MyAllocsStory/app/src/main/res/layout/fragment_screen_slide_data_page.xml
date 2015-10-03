@@ -18,4 +18,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/evenementMajeurLabel" />
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/ic_barre_annee_allocataire_slide" />
+
+            <TextView
+                android:textSize="16sp"
+                android:paddingBottom="5dp"
+                android:textColor="#ffffff"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/autresEvenementLabel" />
+        </LinearLayout>
+
+    </TableRow>
+
 </LinearLayout>
