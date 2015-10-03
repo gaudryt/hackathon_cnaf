@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jackson-annotations-2.0.2.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jackson-core-2.0.2.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jackson-databind-2.0.2.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jsonrpc2-base-1.34.4.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jsonrpc2-base-1.36.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jsonrpc2-base-1.38.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jsonrpc2-server-1.10.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jsonrpc2-server-1.11.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/jsonrpc4j-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/json-smart-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/json-smart-1.3.1.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Bureau/hackathon_cnaf/serveur/target/dependency/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/tgaudry/Téléchargements/postgresql-9.4-1203.jdbc4.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
