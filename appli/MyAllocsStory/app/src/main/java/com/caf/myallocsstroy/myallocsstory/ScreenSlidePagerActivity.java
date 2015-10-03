@@ -15,7 +15,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
-    private static final int NB_YEARS = 7;
+    private static final int NB_YEARS = 3;
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
@@ -66,14 +66,14 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         public Fragment getItem(int position) {
             Fragment fragment = ScreenSlidePageFragment.newInstance(position);
             View view = fragment.getView();
-            findViewById(R.id.slideContent);
             return fragment;
         }
 
 
         @Override
         public int getCount() {
-            return NB_YEARS;
+            // 2 slides par année, car un énènement majeur par année dans nos données de test
+            return NB_YEARS*2;
         }
     }
 

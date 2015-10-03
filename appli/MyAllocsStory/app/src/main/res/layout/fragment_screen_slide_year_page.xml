@@ -1,0 +1,22 @@
+<!-- fragment_screen_slide_year_page.xml -->
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/slideContent"
+    android:layout_width="match_parent"
+     android:fillViewport="true"
+    android:layout_height="match_parent" >
+
+     <RelativeLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center" >
+         <TextView
+             android:textSize="28sp"
+             android:padding="10dp"
+             android:lineSpacingMultiplier="1.2"
+             android:background="@drawable/rounded_corners"
+             android:gravity="center"
+             android:layout_width="100dip"
+             android:layout_height="wrap_content"
+             android:id="@+id/yearLabel" />
+     </RelativeLayout>
+</ScrollView>
