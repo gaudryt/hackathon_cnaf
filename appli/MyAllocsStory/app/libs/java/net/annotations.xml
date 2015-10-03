@@ -1,0 +1,5 @@
+<root>
+  <item name='java.net.InetAddress java.net.InetAddress getByName(java.lang.String)'>
+    <annotation name='java.lang.annotation.Deprecated' />
+  </item>
+</root>

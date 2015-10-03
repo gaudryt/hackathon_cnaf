@@ -5,15 +5,15 @@ package soprasteria;
 import com.googlecode.jsonrpc4j.JsonRpcServer;
 import com.googlecode.jsonrpc4j.StreamServer;
 
+import entites.ServiceDistantImpl;
+
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.UnknownHostException;
 import java.text.*;
 import java.util.*;
-
-import requesthandler.ListObjetsHandler;
-
 
 /**
 * Demonstration of the JSON-RPC 2.0 Server framework usage. The request
@@ -28,15 +28,16 @@ public class App {
  
 	public static void main(String[] ar) throws IOException{
 		// create the jsonRpcServer
-		ListObjetsHandler handler = new ListObjetsHandler();
-		JsonRpcServer jsonRpcServer = new JsonRpcServer(handler);
-	
+		ServiceDistantImpl userService = new ServiceDistantImpl();
+		JsonRpcServer jsonRpcServer = new JsonRpcServer(userService, ServiceDistantImpl.class);
+		
 		// create the stream server
 		int maxThreads = 50;
 		int port = 1420;
-		InetAddress bindAddress = InetAddress.getByName("localhost");
-		StreamServer streamServer = new StreamServer(jsonRpcServer, maxThreads, port, 0, bindAddress);
-	
+		InetAddress bindAddress = InetAddress.getByName("192.168.1.101");
+		ServerSocket serverSocket = new ServerSocket(1420, 1, bindAddress);
+		StreamServer streamServer = new StreamServer(jsonRpcServer, 5, serverSocket);
+		streamServer.setMaxClientErrors(100);
 	
 		// start it, this method doesn't block
 		streamServer.start();
