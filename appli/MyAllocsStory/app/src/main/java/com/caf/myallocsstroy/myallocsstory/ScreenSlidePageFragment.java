@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entites.Evenement;
+import service.ServiceJSON;
 
 /**
  * Created by tgaudry on 02/10/2015.
@@ -100,7 +101,7 @@ public class ScreenSlidePageFragment extends Fragment {
     }
     private List<Evenement> getDataTemp(){
         List<Evenement> result = new ArrayList<Evenement>();
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+        /*SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         try {
             Date date2009 = formatter.parse("12/02/2009");
             result.add(new Evenement((long) 0, "vous vous êtes marié", "infosCachees", "mar", date2009));
@@ -114,6 +115,15 @@ public class ScreenSlidePageFragment extends Fragment {
             {
                 e.printStackTrace();
             }
+        return result;*/
+        ServiceJSON serviceJSON = new ServiceJSON();
+
+        try {
+            result = serviceJSON.getListeEntite("02030201023");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
         return result;
     }
 

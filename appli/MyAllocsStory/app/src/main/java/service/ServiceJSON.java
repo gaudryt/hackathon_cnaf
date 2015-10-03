@@ -23,24 +23,42 @@ public class ServiceJSON {
             client.setConnectionTimeout(2000);
             client.setSoTimeout(2000);
             String rep = "";
-            try
-            {
-                rep = client.callString("getListeObjets",  num);
-            }
+            /*try
+            {*/
+                rep = "0;INF;Ceci est un test visible.;Ceci est un test caché;01/01/2010\n";
+                rep = rep + "1;QUE;Quelle est la couleur du cheval blanc d'Henry 4 ?;Blanc;01/02/2010\n";
+                rep = rep + "2;DEM;Rouen;Paris;01/03/2010\n";
+                rep = rep + "3;MES;Le saviez-vous ? Aujourd'hui a lieu le hackathon de la cnaf !;nill;01/04/2010\n";
+                rep = rep + "4;INF;Vous pouvez recevoir 1000 euros pour cette année;nill;01/05/2010\n";
+                rep = rep + "5;QUE;Qu'est ce qui est petit, jaune et qui fait peur ?;Un poussin avec une mitraillette;01/06/2010\n";
+                rep = rep + "6;DEM;Terre;Mars;01/07/2010\n";
+                rep = rep + "7;MES;Le saviez vous ? 1/2 des français ont droit à la CAF;Ca fait beaucoup;01/08/2010\n";
+                rep = rep + "8;INF;Votre fiston fête ses 3 ans;Kado;01/09/2010\n";
+                rep = rep + "9;QUE;Quel est l'age de la branche famille des allocations ?;60;01/10/2010\n";
+                rep = rep + "10;QUE;Quelle est la couleur du cheval blanc d'Henry 4 ?;Blanc;01/02/2010\n";
+                rep = rep + "11;QUE;Quelle est la couleur du cheval blanc d'Henry 4 ?;Blanc;01/02/2010\n";
+                rep = rep + "12;DEM;Rouen;Paris;01/03/2010\n";
+                rep = rep + "13;MES;Le saviez-vous ? Aujourd'hui a lieu le hackathon de la cnaf !;nill;01/04/2010\n";
+                rep = rep + "14;INF;Vous pouvez recevoir 1000 euros pour cette année;nill;01/05/2010\n";
+                rep = rep + "15;QUE;Qu'est ce qui est petit, jaune et qui fait peur ?;Un poussin avec une mitraillette;01/06/2010\n";
+                rep = rep + "16;DEM;Terre;Mars;01/07/2010\n";
+                rep = rep + "17;MES;Le saviez vous ? 1/2 des français ont droit à la CAF;Ca fait beaucoup;01/08/2010\n";
+                rep = rep + "18;INF;Votre fiston fête ses 3 ans;Kado;01/09/2010\n";
+                rep = rep + "19;QUE;Quel est l'age de la branche famille des allocations ?;60;01/10/2010\n";
+            /*}
             catch (JSONRPCException e)
             {
                 e.printStackTrace();
-            }
+            }*/
             if(rep != ""){
                 String[] format = rep.split("\n");
                 for(int i = 0; i <= 9; i++){
                     String[] ligne = format[i].split(";");
                     String dtStart = ligne[4];
                     Date date = new Date();
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/aaaa");
                     try {
-                        date = dateFormat.parse(dtStart);
-                        System.out.println(date);
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/aaaa");
+                        date = dateFormat.parse("12/02/2009");
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
