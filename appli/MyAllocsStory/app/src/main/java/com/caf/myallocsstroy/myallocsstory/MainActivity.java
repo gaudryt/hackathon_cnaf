@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_connection) {
             // Handle the camera action
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(this, ScreenSlidePagerActivity.class);
+            Intent intent = new Intent(this, FirstStringActivity.class);
             startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
